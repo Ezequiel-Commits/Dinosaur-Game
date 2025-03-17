@@ -33,3 +33,12 @@ class Tapestry:
         for cactusObject in self.list_of_cacti:
             # Draw the cactus 
             cactusObject.draw()
+    
+    def collision(self, dino):
+        collision = False
+        for cactus in self.list_of_cacti:
+            #print(dino)
+            if cactus.check_collision(dino)==True:
+                collision=True
+                print ("collision")
+        return collision

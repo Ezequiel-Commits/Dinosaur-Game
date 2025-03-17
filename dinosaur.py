@@ -67,3 +67,6 @@ class Dinosour:
         # Set an instance variable to some value to be checked
         # in the gameManager class
         self.jumping = True
+
+    def __repr__(self):
+        return f"DINO: <{self.leftx}, {self.bottomy}>" #Not too sure what this f does 

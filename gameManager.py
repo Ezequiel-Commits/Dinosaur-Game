@@ -5,11 +5,11 @@ import time
 
 class GameManager:
     def __init__(self,refresh_persecond,length,dino,tapestry):
-        self.refresh_persecond=refresh_persecond
-        self.length=length
-        self.dino=dino
-        self.tapestry=tapestry
-        self.currentx=0
+        self.refresh_persecond = refresh_persecond
+        self.length = length
+        self.dino = dino
+        self.tapestry= tapestry
+        self.currentx = 0
         
     def run(self):
         # move the screen over the tapestry using a turtle 
@@ -31,13 +31,11 @@ class GameManager:
         else:
             print("error cactch: Jumping isn't set to a value")
         turtle.update()
+
+        collision = self.tapestry.collision(self.dino)
+        if collision==True:
+            exit()
+        turtle.update()
         
-        # for cactusObject in self.tapestry.list_of_cacti:
-        #     # check for collisions by looping through a list
-        #     # of all the cactus objects and running the check_ \
-        #     # collision method on them
-        #     cactusObject.check_collision \
-        #     (self.dino)
         
-        turtle.ontimer(self.run,1000//self.refresh_persecond) 
-        #Why have two "//" here?
+        turtle.ontimer(self.run,1000//self.refresh_persecond) # Two "//" for float division
