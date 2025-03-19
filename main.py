@@ -3,7 +3,7 @@
 import turtle 
 import time
 import dinosaur
-import gameManager
+import animationManager
 import tapestry 
 import cactus
 
@@ -31,17 +31,17 @@ def main():
     turtle.setworldcoordinates(0,0, 400, 350)
     """====================== STUDENT CODE BEGINS =========================="""
     
-    dinosaurObject=dinosaur.Dinosour(0,0)
+    dinosaurObject = dinosaur.Dinosour(0,0)
     dinosaurObject.draw()
     
-    cactusObject =cactus.Cactus(100)
+    cactusObject = cactus.Cactus(100)
     cactusObject.draw()
     cactusObject.check_collision(dinosaurObject)
     
     tapestryObject = tapestry.Tapestry(nOfCacti = 200,tapestry_length = 20000)
     tapestryObject.generate()
     
-    gameManagerObject = gameManager.GameManager(60,1000, \
+    gameManagerObject = animationManager.AnimationManager(60,1000, \
     dinosaurObject, tapestryObject)
     gameManagerObject.run()
     

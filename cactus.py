@@ -6,14 +6,14 @@ import time
 class Cactus:
     def __init__(self,x):
         # middle x
-        self.x=x
+        self.x = x
         # Define bounding variables of each cactus to check 
         # for collisions later
-        self.leftx=x-5
-        self.rightx=x+5
-        self.topy=30
-        self.bottomy=0
-        self.turt=turtle.Turtle()
+        self.leftx = x-5
+        self.rightx = x+5
+        self.topy = 30
+        self.bottomy = 0
+        self.turt = turtle.Turtle()
         self.turt.ht()
     
     
@@ -49,8 +49,8 @@ class Cactus:
         bottom2 = self.bottomy
         
         # Variables to check if the dinosaur and cactus overlap
-        x_overlap=False
-        y_overlap=False
+        x_overlap = False
+        y_overlap = False
         
         # print("top2:" + str(top2),"bottom2:" + str(bottom2))
         
@@ -71,7 +71,7 @@ class Cactus:
         else:
             y_overlap = True
         
-        if x_overlap==True and y_overlap==True:
+        if x_overlap == True and y_overlap == True:
             # the player has touched a cactus
             print("you lose")
             exit()

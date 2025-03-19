@@ -3,18 +3,18 @@
 import turtle
 import time
 
-class GameManager:
+class AnimationManager:
     def __init__(self,refresh_persecond,length,dino,tapestry):
         self.refresh_persecond = refresh_persecond
         self.length = length
         self.dino = dino
-        self.tapestry= tapestry
+        self.tapestry = tapestry
         self.currentx = 0
         
     def run(self):
         # move the screen over the tapestry using a turtle 
         # method and for loop
-        self.currentx+=1
+        self.currentx += 1
         turtle.setworldcoordinates(0+self.currentx,-20, \
         400+self.currentx,350) 
         
@@ -33,7 +33,7 @@ class GameManager:
         turtle.update()
 
         collision = self.tapestry.collision(self.dino)
-        if collision==True:
+        if collision == True:
             exit()
         turtle.update()
         

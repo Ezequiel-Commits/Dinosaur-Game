@@ -1,22 +1,19 @@
 import turtle
 import time
+import sprite
 
-class Dinosour:
+class Dinosour(sprite.Sprite):
+    # Use the sprite class constructor
     
     def __init__(self,x,y):
-        # Bottom left of the triangle
-        self.x=x
-        self.y=y
+        sprite.Sprite.__init__(self, x) # Bottom left of the triangle is x
+        self.y = y
         # Define bounding variables of each cactus to check 
         # for collisions later
-        self.leftx=x-(x/2)
-        self.rightx=x+(x/2)
-        self.topy=self.y+49
-        self.bottomy=self.y
-        
-        self.turt=turtle.Turtle()
-        self.turt.ht()
-        self.turt.speed(0)
+        self.leftx = x-(x/2)
+        self.rightx = x+(x/2)
+        self.topy = self.y+49
+        self.bottomy = self.y
         
         self.goUp = True # Debounce variable
         
