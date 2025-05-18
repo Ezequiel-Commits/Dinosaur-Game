@@ -9,7 +9,9 @@ class Sprite:
         self.turt.speed(0)
     
     def draw(self):
+        # Not much in common between draw methods. 
         pass
 
     def undraw(self):
+        self.turt.clear()
         pass

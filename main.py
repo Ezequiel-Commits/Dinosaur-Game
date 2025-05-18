@@ -24,29 +24,16 @@ def main():
         window.bgcolor("white")
     
     setupWin()
-    """====================== STUDENTS: NAME YOUR TURTLES =========================="""
-
-    # turn off tracer
-    turtle.tracer(False)
-    turtle.setworldcoordinates(0,0, 400, 350)
-    """====================== STUDENT CODE BEGINS =========================="""
+    """====================== Initiating my classes =========================="""
     
     dinosaurObject = dinosaur.Dinosour(0,0)
     dinosaurObject.draw()
     
-    cactusObject = cactus.Cactus(100)
-    cactusObject.draw()
-    cactusObject.check_collision(dinosaurObject)
-    
-    tapestryObject = tapestry.Tapestry(nOfCacti = 200,tapestry_length = 20000)
+    tapestryObject = tapestry.Tapestry(nOfCacti = 200, tapestryLength = 20000)
     tapestryObject.generate()
     
-    gameManagerObject = animationManager.AnimationManager(60,1000, \
-    dinosaurObject, tapestryObject)
-    gameManagerObject.run()
-    
-    # render the screen
-    turtle.update()
+    animationManagerObject = animationManager.AnimationManager(dinosaurObject, tapestryObject)
+    animationManagerObject.run()
     """====================== STUDENT CODE ENDS =========================="""
     
     # Do not edit

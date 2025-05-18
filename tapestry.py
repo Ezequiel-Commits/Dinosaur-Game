@@ -1,44 +1,31 @@
-"""A tapestry class to render the game"""
+"""A tapestry class to that encapsulates the background of the game, including the ground and cacti"""
 import random
 import cactus
-import dinosaur
 import turtle
 
 class Tapestry:
-    # Create a tapestry that will serve as a background
-    def __init__(self, nOfCacti,tapestry_length):
+    def __init__(self, nOfCacti, tapestryLength):
         self.nOfCacti = nOfCacti
-        self.tapestry_length = tapestry_length
+        self.tapestryLength = tapestryLength
         
-        # An instance variable to make checking for collisions
-        # easier
-        self.list_of_cacti=[]
-        
-        self.turt=turtle.Turtle()
+        # An instance variable to make checking for collisions easier
+        self.listOfCacti=[]
+
     
     def generate(self):
         # Generate a tapestry with randomly spaced cacti that will 
         # appear on the screen as the dinosaur moves
-        self.list_of_cacti=[]
+        self.listOfCacti=[]
         
         # loops for amount of cacti to get location of the cacti's
         for Cactus in range(self.nOfCacti):
             #Add a random cactus between 0 and the length of the 
             # tapestry 
-            random_X = random.randint(0,self.tapestry_length)
+            random_X = random.randint(0,self.tapestryLength)
             # create a cactus object with a random x
             new_cactus=cactus.Cactus(random_X)
-            self.list_of_cacti.append(new_cactus )
+            self.listOfCacti.append(new_cactus )
             
-        for cactusObject in self.list_of_cacti:
+        for cactusObject in self.listOfCacti:
             # Draw the cactus 
             cactusObject.draw()
-    
-    def collision(self, dino):
-        collision = False
-        for cactus in self.list_of_cacti:
-            #print(dino)
-            if cactus.check_collision(dino)==True:
-                collision=True
-                print ("collision")
-        return collision

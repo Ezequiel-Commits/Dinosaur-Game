@@ -2,19 +2,18 @@
 import dinosaur
 import turtle
 import time
+import sprite
 
 class Cactus:
-    def __init__(self,x):
-        # middle x
-        self.x = x
+    def __init__(self, x):
+        sprite.Sprite.__init__(self, x) # middle x
+        
         # Define bounding variables of each cactus to check 
         # for collisions later
         self.leftx = x-5
         self.rightx = x+5
         self.topy = 30
         self.bottomy = 0
-        self.turt = turtle.Turtle()
-        self.turt.ht()
     
     
     def draw(self):

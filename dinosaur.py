@@ -24,7 +24,7 @@ class Dinosour(sprite.Sprite):
         turtle.listen()
 
     
-    def draw(self,x=0):
+    def draw(self, x = 0):
         self.x = x
         # Go to the starting coords of the dinosaur
         self.turt.penup()
@@ -35,7 +35,7 @@ class Dinosour(sprite.Sprite):
             self.turt.forward(40)
             self.turt.left(120)
     
-    def render_jump(self,x=0): 
+    def renderJump(self,x=0): 
         # pass in an x so that the dinosaur moves along with 
         # the tapestry 
         self.x = x
