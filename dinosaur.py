@@ -2,12 +2,13 @@ import turtle
 import time
 import sprite
 
-class Dinosour(sprite.Sprite):
+class Dinosaur(sprite.Sprite):
     # Use the sprite class constructor
     
     def __init__(self,x,y):
         sprite.Sprite.__init__(self, x) # Bottom left of the triangle is x
         self.y = y
+        self.x = x
         # Define bounding variables of each cactus to check 
         # for collisions later
         self.leftx = x-(x/2)
@@ -65,5 +66,5 @@ class Dinosour(sprite.Sprite):
         # in the gameManager class
         self.jumping = True
 
-    def __repr__(self):
-        return f"DINO: <{self.leftx}, {self.bottomy}>" #Not too sure what this f does 
+    # def __repr__(self):
+    #     return f"DINO: <{self.leftx}, {self.bottomy}>" #Not too sure what this f does 

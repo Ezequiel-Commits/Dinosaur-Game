@@ -7,7 +7,6 @@ import animationManager
 import tapestry 
 import cactus
 
-""" ================== STUDENTS: ONLY EDIT WHERE INDICATED ================"""
 window  = None
 WINX, WINY = 400, 350
 
@@ -26,17 +25,24 @@ def main():
     setupWin()
     """====================== Initiating my classes =========================="""
     
-    dinosaurObject = dinosaur.Dinosour(0,0)
+    # turn off tracer
+    turtle.tracer(False)
+    turtle.setworldcoordinates(0,0, 400, 350) # Deleting this made my game unplayable. 
+
+    dinosaurObject = dinosaur.Dinosaur(0,0)
     dinosaurObject.draw()
+    time1 = time.time()
+    time.sleep(1)
+    time2 = time.time()
+    print(time1 - time2)
     
-    tapestryObject = tapestry.Tapestry(nOfCacti = 200, tapestryLength = 20000)
+    tapestryObject = tapestry.Tapestry(nOfCacti = 200, tapestryLength = 20000) #Cacti can be bunched up or not present for a while. 
     tapestryObject.generate()
     
     animationManagerObject = animationManager.AnimationManager(dinosaurObject, tapestryObject)
     animationManagerObject.run()
-    """====================== STUDENT CODE ENDS =========================="""
     
-    # Do not edit
     window.mainloop()
 
 main()
+ 

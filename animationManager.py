@@ -10,11 +10,19 @@ class AnimationManager:
         self.dino = dino
         self.tapestry = tapestry
         self.currentX = 0
+        self.refreshPerSecond = 30
 
-        self.myCollisionManager = collisionManager.CollisionManager(spriteList = [dino, tapestry.listOfCacti])
+        self.spriteList = []
+        self.spriteList.append(dino)
+        for Cactus in tapestry.listOfCacti:
+            self.spriteList.append(Cactus)
 
-        turtle.tracer(False)
-        turtle.setworldcoordinates(0,0, 400, 350)
+        self.myCollisionManager = collisionManager.CollisionManager(self.spriteList)
+
+        scoreTracker = turtle.Turtle()
+        startTime = time.time()
+        scoreTracker.
+        if startTime - time.time()
         
     def run(self):
         # move the screen over the tapestry using a turtle method and for loop
@@ -26,14 +34,20 @@ class AnimationManager:
         # Render the dinosaur on the ground until the player presses the "up" key
         if self.dino.jumping == False:
             # Draw the dinosaur on the ground
-            self.dino.draw(self.currentX)
+            self.dino.draw(0 + self.currentX)
         elif self.dino.jumping == True:
             # draw the dinosaur jumping
-            self.dino.renderJump(self.currentX)
+            self.dino.renderJump(0 + self.currentX)
         else:
             print("error cactch: Jumping isn't set to a value")
         
         turtle.update()
+
+        collision = self.myCollisionManager.checkCollisions()
+        if collision == "endgame":
+            print("working")
+        else:
+            pass
         
         
-        turtle.ontimer(self.run,1000//60) 
+        turtle.ontimer(self.run,1000//self.refreshPerSecond) 

@@ -15,7 +15,6 @@ class Tapestry:
     def generate(self):
         # Generate a tapestry with randomly spaced cacti that will 
         # appear on the screen as the dinosaur moves
-        self.listOfCacti=[]
         
         # loops for amount of cacti to get location of the cacti's
         for Cactus in range(self.nOfCacti):

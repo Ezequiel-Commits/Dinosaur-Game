@@ -14,6 +14,9 @@ class Cactus:
         self.rightx = x+5
         self.topy = 30
         self.bottomy = 0
+
+        self.x = x
+        self.y = 15
     
     
     def draw(self):
@@ -26,8 +29,8 @@ class Cactus:
             self.turt.forward(30)
             self.turt.left(90)
     
-    def __repr_(self):
-        pass
+    # def __repr_(self):
+    #     pass
     
     def check_collision(self,dino):
         # a method to check if a cactus has collided with the

@@ -6,7 +6,8 @@ class Sprite:
         self.x = x
         self.turt = turtle.Turtle()
         self.turt.ht()
-        self.turt.speed(0)
+        self.size = 10
+        # self.turt.speed(0)
     
     def draw(self):
         # Not much in common between draw methods. 
