@@ -19,10 +19,10 @@ class AnimationManager:
 
         self.myCollisionManager = collisionManager.CollisionManager(self.spriteList)
 
-        scoreTracker = turtle.Turtle()
-        startTime = time.time()
-        scoreTracker.
-        if startTime - time.time()
+        self.scoreTracker = turtle.Turtle()
+        self.scoreTracker.ht()
+        self.startTime = time.time()
+        # Check how many seconds have passed since the program started running and store it in a variable
         
     def run(self):
         # move the screen over the tapestry using a turtle method and for loop
@@ -30,6 +30,10 @@ class AnimationManager:
         turtle.setworldcoordinates(llx = self.currentX ,lly = -20, urx = 400 + self.currentX, ury = 350) 
         
         self.dino.undraw()
+        self.scoreTracker.clear()
+
+        self.scoreTracker.goto(350 + self.currentX,300)
+        self.scoreTracker.write(arg = int((self.startTime - time.time()) * -10), font = ("Arial", 20, "normal"))
 
         # Render the dinosaur on the ground until the player presses the "up" key
         if self.dino.jumping == False:
@@ -45,9 +49,10 @@ class AnimationManager:
 
         collision = self.myCollisionManager.checkCollisions()
         if collision == "endgame":
-            print("working")
+            print("Game over")
+            # return 
         else:
             pass
         
         
-        turtle.ontimer(self.run,1000//self.refreshPerSecond) 
+        turtle.ontimer(self.run,100//self.refreshPerSecond) 

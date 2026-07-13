@@ -18,11 +18,9 @@ class Tapestry:
         
         # loops for amount of cacti to get location of the cacti's
         for Cactus in range(self.nOfCacti):
-            #Add a random cactus between 0 and the length of the 
-            # tapestry 
             random_X = random.randint(0,self.tapestryLength)
             # create a cactus object with a random x
-            new_cactus=cactus.Cactus(random_X)
+            new_cactus = cactus.Cactus(random_X)
             self.listOfCacti.append(new_cactus )
             
         for cactusObject in self.listOfCacti:

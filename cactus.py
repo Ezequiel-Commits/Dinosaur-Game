@@ -21,6 +21,7 @@ class Cactus:
     
     def draw(self):
         # Go to the coordinates defined by the tapestry class
+        # Drawing Cacti is coupled with drawing the Tapestry at this point. If I wanted to space out cacti, I'd have to do some refactoring. 
         self.turt.goto(self.x,0)
         for i in range(2):
             # Draw a basic cactus

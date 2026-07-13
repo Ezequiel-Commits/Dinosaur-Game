@@ -31,12 +31,8 @@ def main():
 
     dinosaurObject = dinosaur.Dinosaur(0,0)
     dinosaurObject.draw()
-    time1 = time.time()
-    time.sleep(1)
-    time2 = time.time()
-    print(time1 - time2)
     
-    tapestryObject = tapestry.Tapestry(nOfCacti = 200, tapestryLength = 20000) #Cacti can be bunched up or not present for a while. 
+    tapestryObject = tapestry.Tapestry(nOfCacti = 20, tapestryLength = 3000) #Cacti can be bunched up or not present for a while. 
     tapestryObject.generate()
     
     animationManagerObject = animationManager.AnimationManager(dinosaurObject, tapestryObject)

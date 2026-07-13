@@ -42,7 +42,7 @@ class Dinosaur(sprite.Sprite):
         self.x = x
         if self.goUp == True:
             # add 1 to the y-coord
-            self.y += 1
+            self.y += 1.5
             # if the y-coord is bigger than 120 set goUp to true
             if self.y >=60:
                 self.goUp =not self.goUp
@@ -50,7 +50,7 @@ class Dinosaur(sprite.Sprite):
         # if goUp is false
         if self.goUp == False:
             # subtract 1 from the y-coord
-            self.y -= 1
+            self.y -= 1.5
             if self.y <=0:
                 self.goUp=not self.goUp
                 # Let the game manager know the jump has been completed
