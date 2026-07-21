@@ -4,7 +4,7 @@ import turtle
 import time
 import sprite
 
-class Cactus:
+class Cactus(sprite.Sprite):
     def __init__(self, x):
         sprite.Sprite.__init__(self, x) # middle x
         
@@ -29,9 +29,6 @@ class Cactus:
             self.turt.left(90)
             self.turt.forward(30)
             self.turt.left(90)
-    
-    # def __repr_(self):
-    #     pass
     
     def check_collision(self,dino):
         # a method to check if a cactus has collided with the

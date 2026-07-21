@@ -44,7 +44,7 @@ class Dinosaur(sprite.Sprite):
             # add 1 to the y-coord
             self.y += 1.5
             # if the y-coord is bigger than 120 set goUp to true
-            if self.y >=60:
+            if self.y >= 69:
                 self.goUp =not self.goUp
                 
         # if goUp is false

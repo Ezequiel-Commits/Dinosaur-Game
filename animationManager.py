@@ -3,18 +3,31 @@
 import turtle
 import time
 import collisionManager
+import tapestry
+import cactus
+
 
 class AnimationManager:
-    def __init__(self, dino, tapestry): 
+    def __init__(self, dino):
+
+        self.tapestryLength = 550
+        tapestryObject = tapestry.Tapestry(nOfCacti = 2) #Cacti can be bunched up or not present for a while. 
+        tapestryObject.generate(500, self.tapestryLength) 
         
         self.dino = dino
-        self.tapestry = tapestry
+        self.tapestry = tapestryObject
         self.currentX = 0
         self.refreshPerSecond = 30
 
         self.spriteList = []
         self.spriteList.append(dino)
-        for Cactus in tapestry.listOfCacti:
+
+        # Variable to help generate cactus as the game runs. 
+        self.cactusCount = 0 
+
+        for Cactus in self.tapestry.listOfCacti:
+            # How to delete Cactus as they're left behind? 
+            self.cactusCount += 1 
             self.spriteList.append(Cactus)
 
         self.myCollisionManager = collisionManager.CollisionManager(self.spriteList)
@@ -26,7 +39,35 @@ class AnimationManager:
         
     def run(self):
         # move the screen over the tapestry using a turtle method and for loop
-        self.currentX += 1
+        self.currentX += 2
+
+        for sprite in self.spriteList:
+            if sprite.x <= self.currentX - 20:
+                # Check the sprites' coordinates
+                
+                # if outside of the window, undraw the sprite and remove the sprite from spriteList 
+                sprite.undraw()
+                if isinstance(sprite, cactus.Cactus):
+                    # A start to clearing the list of cacti
+                    print(self.spriteList, self.tapestry.listOfCacti)
+                    self.tapestry.listOfCacti.remove( sprite )
+                    self.cactusCount -= 1
+                self.spriteList.remove( sprite )
+        
+        if self.cactusCount < 3:
+            # print(self.spriteList)
+            print(self.cactusCount)
+            self.cactusCount += 2
+            # It's generating the cactus behind the dinosaur as opposed to in front of the dinosaur
+            self.tapestry.generate(self.currentX + 500, self.currentX + self.tapestryLength)
+            for Cactus in self.tapestry.listOfCacti:
+                # If the cactus is already in the sprite list. 
+                if Cactus in self.spriteList:
+                    break
+                # How to avoid adding in the same cacti for each run of this for loop? 
+                self.spriteList.append(Cactus)
+
+
         turtle.setworldcoordinates(llx = self.currentX ,lly = -20, urx = 400 + self.currentX, ury = 350) 
         
         self.dino.undraw()

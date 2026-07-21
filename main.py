@@ -32,10 +32,7 @@ def main():
     dinosaurObject = dinosaur.Dinosaur(0,0)
     dinosaurObject.draw()
     
-    tapestryObject = tapestry.Tapestry(nOfCacti = 20, tapestryLength = 3000) #Cacti can be bunched up or not present for a while. 
-    tapestryObject.generate()
-    
-    animationManagerObject = animationManager.AnimationManager(dinosaurObject, tapestryObject)
+    animationManagerObject = animationManager.AnimationManager(dinosaurObject)
     animationManagerObject.run()
     
     window.mainloop()
