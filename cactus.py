@@ -47,6 +47,7 @@ class Cactus(sprite.Sprite):
         right2 = self.rightx
         top2 = self.topy
         bottom2 = self.bottomy
+        # Moving this into the collision manager?
         
         # Variables to check if the dinosaur and cactus overlap
         x_overlap = False
