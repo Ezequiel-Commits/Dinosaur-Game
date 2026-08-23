@@ -4,6 +4,13 @@ class Pterodactyl(sprite.Sprite):
     def __init__(self, x, y = 5):
         super().__init__(x)
 
+        # Define bounding variables of each pterodactyl to check 
+        # for collisions later
+        self.leftx = x
+        self.rightx = x+30
+        self.topy = 10
+        self.bottomy = y
+
         self.x = x
         self.y = y
 

@@ -8,7 +8,6 @@ import pterodactyl
 class CollisionManager:
     def __init__(self, spriteList):
         self.spriteList = spriteList
-
     def checkCollisions(self):
         for sprite1 in self.spriteList:
             for sprite2 in self.spriteList: #Two "for loops" to compare a pair of sprites
@@ -33,44 +32,62 @@ class CollisionManager:
                             # self.spriteList.remove( sprite1 )
                             return "endgame"
 
-def checkCollisions(self):
-        for sprite1 in self.spriteList:
-            for sprite2 in self.spriteList: #Two "for loops" to compare a pair of sprites
-                if sprite1 != sprite2: #Avoid comparing the same sprites to each other
-                    # Define sprite1' hitbox(es)
-                    if sprite1 == dinosaur:
-                        # there'll be multiple hitboxes 
-                        left1 = sprite1.leftx
-                        right1 = sprite1.rightx
-                        top1 = sprite1.topy
-                        bottom1 = sprite1.bottomy
-
-                    # Define sprite2' hitbox(es)
-                    left2 = sprite2.leftx
-                    right2 = sprite2.rightx
-                    top2 = sprite2.topy
-                    bottom2 = sprite2.bottomy
-                    # Variables to check if hitboxes from each sprite overlap
-                    x_overlap = False
-                    y_overlap = False
-                    # Check if there is no collision and then reverse it
-                    if left2 > right1 or right2 < left1:
-                        # the cactus and dinosaur don't have overlapping
-                        # x's
-                        print("no overlap x")
-                        x_overlap = False
-                    else:
-                        x_overlap = True
-                    
-                    if bottom2 > top1 or top2 < bottom1:
-                        # the cactus and dinosaur don't have overlapping
-                        # y's
-                        print("no overlap y")
-                        y_overlap = False
-                    else:
-                        y_overlap = True
-                    
-                    if x_overlap == True and y_overlap == True:
-                        # the player has touched a cactus
-                        print("you lose")
-                        exit()
+    # def checkCollisions(self):
+    #         for sprite1 in self.spriteList:
+    #             for sprite2 in self.spriteList: #Two "for loops" to compare a pair of sprites
+    #                 if sprite1 != sprite2: #Avoid comparing the same sprites to each other
+    #                     # Define sprite1' hitbox(es)
+    #                     if isinstance(sprite1, dinosaur.Dinosaur):
+    #                         # there'll be multiple hitboxes, so define multiple hitboxes
+    #                         # These variables aren't being accessed past the if statement...
+    #                         # global left1
+    #                         left1 = sprite1.leftx1
+    #                         # global right1
+    #                         right1 = sprite1.rightx1
+    #                         # global top1
+    #                         top1 = sprite1.topy1
+    #                         # global bottom1
+    #                         bottom1 = sprite1.bottomy1
+    #                         # left3 = sprite1.leftx
+    #                         # right3 = sprite1.rightx
+    #                         # top3 = sprite1.topy
+    #                         # bottom3 = sprite1.bottomy
+    #                         # left4 = sprite1.leftx
+    #                         # right4 = sprite1.rightx
+    #                         # top4 = sprite1.topy
+    #                         # bottom4 = sprite1.bottomy
+    #                         # left5 = sprite1.leftx
+    #                         # right5 = sprite1.rightx
+    #                         # top5 = sprite1.topy
+    #                         # bottom5 = sprite1.bottomy
+    #                     else
+    #                     # Define sprite2' hitbox(es)
+    #                     left2 = sprite2.leftx
+    #                     right2 = sprite2.rightx
+    #                     top2 = sprite2.topy
+    #                     bottom2 = sprite2.bottomy
+    #                     # Variables to check if hitboxes from each sprite overlap
+    #                     x_overlap = False
+    #                     y_overlap = False
+    #                     # Check if there is no collision and then reverse it; Do I have to do this with
+    #                     # all the dino hitboxes?
+    #                     if left2 > right1 or right2 < left1:
+    #                         # the cactus and dinosaur don't have overlapping
+    #                         # x's
+    #                         print("no overlap x")
+    #                         x_overlap = False
+    #                     else:
+    #                         x_overlap = True
+                        
+    #                     if bottom2 > top1 or top2 < bottom1:
+    #                         # the cactus and dinosaur don't have overlapping
+    #                         # y's
+    #                         print("no overlap y")
+    #                         y_overlap = False
+    #                     else:
+    #                         y_overlap = True
+                        
+    #                     if x_overlap == True and y_overlap == True:
+    #                         # the player has touched a cactus
+    #                         print("you lose")
+    #                         exit()

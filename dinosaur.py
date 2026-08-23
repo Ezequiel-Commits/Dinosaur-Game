@@ -9,12 +9,6 @@ class Dinosaur(sprite.Sprite):
         sprite.Sprite.__init__(self, x) # Bottom left of the triangle is x
         self.y = y
         self.x = x
-        # How to have the collisions match the rectangle shape on screen?
-        # Using a number of rectangles within the triangle as hit boxes
-        # self.leftx = x-(x/2)
-        # self.rightx = x+(x/2)
-        # self.topy = self.y+49
-        # self.bottomy = self.y
         self.hitboxList = []
         
         self.goUp = True # Debounce variable
@@ -45,8 +39,13 @@ class Dinosaur(sprite.Sprite):
         # Testing out different numbers until I like what I see
         # Are the hitboxes automatically considered sprites?
         # self.turt.penup()
-        # self.turt.goto(self.x + 7, self.y)
-        # self.hitBox1 = self.drawSq(27, 8)
+        self.turt.goto(self.x + 7, self.y)
+        self.hitBox1 = self.drawSq(27, 8)
+        # Circumventing the nonetype error.
+        self.leftx1 = self.x + 7
+        self.rightx1 = self.x + 27 
+        self.topy1 = self.y + 8
+        self.bottomy1 = self.y
         # self.turt.goto(self.x + 10, self.y + 8)
         # self.hitBox2 = self.drawSq(18, 8)
         # self.turt.goto(self.x + 14, self.y + 16)
