@@ -5,10 +5,10 @@ class Pterodactyl(sprite.Sprite):
         super().__init__(x)
 
         # Define bounding variables of each pterodactyl to check 
-        # for collisions later
+        # for collisions later; What about the pterodactyls that go up? 
         self.leftx = x
         self.rightx = x+30
-        self.topy = 10
+        self.topy = y + 10
         self.bottomy = y
 
         self.x = x
