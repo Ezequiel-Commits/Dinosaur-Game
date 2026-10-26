@@ -38,32 +38,33 @@ class Dinosaur(sprite.Sprite):
             self.turt.left(120)
         # Testing out different numbers until I like what I see
         # self.turt.penup()
-        self.turt.goto(self.x + 7, self.y)
+        self.turt.goto(self.x + 7 * 3, self.y)
         self.hitBox1 = self.drawSq(27, 8)
         # Circumventing the nonetype error.
-        self.leftx1 = self.x + 7
-        self.rightx1 = self.leftx1 + 27 
-        self.topy1 = self.y + 8
-        self.bottomy1 = self.y
-        self.turt.goto(self.x + 10, self.y + 8)
+        self.leftx1 = self.x + 7 
+        self.rightx1 = self.leftx1 + 27  
+        self.topy1 = self.y + 8 
+        self.bottomy1 = self.y 
+        self.turt.goto(self.x + 10 * 3, self.y + 8 * 3)
         self.hitBox2 = self.drawSq(18, 8)
-        self.leftx2 = self.x + 10
-        self.rightx2 = self.leftx1 + 18 
-        self.topy2 = self.y + 16
-        self.bottomy2 = self.y + 8
-        self.turt.goto(self.x + 14, self.y + 16)
+        # Something different is going on between the drawn hitbox and the actual hitbox.
+        self.leftx2 = self.x + 10 + 20 
+        self.rightx2 = self.leftx1 + 18 + 20 
+        self.topy2 = self.y + 16 + 16
+        self.bottomy2 = self.y + 8 + 16
+        self.turt.goto(self.x + 14 * 3, self.y + 16 * 3)
         self.hitBox3 = self.drawSq(14, 8)
-        self.leftx3 = self.x + 14
-        self.rightx3 = self.leftx3 + 14 
-        self.topy3 = self.y + 24
-        self.bottomy3 = self.y + 16
-        self.turt.goto(self.x + 18, self.y + 24)
+        self.leftx3 = self.x + 14 
+        self.rightx3 = self.leftx3 + 14  
+        self.topy3 = self.y + 24 
+        self.bottomy3 = self.y + 16 
+        self.turt.goto(self.x + 18 * 3, self.y + 24 * 3)
         self.hitBox4 = self.drawSq(3, 8)
         # The y overlap always seems to occur for this hitbox...
-        self.leftx4 = self.x + 18
-        self.rightx4 = self.leftx4 + 3 
-        self.topy4 = self.y + 32
-        self.bottomy4 = self.y + 24
+        self.leftx4 = self.x + 18 
+        self.rightx4 = self.leftx4 + 3  
+        self.topy4 = self.y + 32 
+        self.bottomy4 = self.y + 24 
     
     def renderJump(self,x=0): 
         # pass in an x so that the dinosaur moves along with 

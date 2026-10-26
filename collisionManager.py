@@ -44,25 +44,25 @@ class CollisionManager:
                                 # Check if there is no collision and then reverse it; Do I have to do this with
                                 # all the dino hitboxes?
                                 # The top most hitbox isn't working right now...
-                                if left2 > right1 or right2 < left1:
+                                # if left2 > right1 or right2 < left1:
+                                #     x_overlap = False
+                                if left2 > right3 or right2 < left3:
                                     x_overlap = False
-                                elif left2 > right3 or right2 < left3:
-                                    x_overlap = False
-                                elif left2 > right5 or right2 < left5:
-                                    x_overlap = False
+                                # if left2 > right5 or right2 < left5:
+                                #     x_overlap = False
                                 else:
                                     x_overlap = True
-                                if bottom2 > top1 or top2 < bottom1:
-                                    # the cactus and dinosaur don't have overlapping
-                                    # y's
-                                    # print("no overlap y")
+                                # if bottom2 > top1 or top2 < bottom1:
+                                #     # the cactus and dinosaur don't have overlapping
+                                #     # y's
+                                #     # print("no overlap y")
+                                #     y_overlap = False
+                                if  bottom2 > top3 or top2 < bottom3:
                                     y_overlap = False
-                                elif  bottom2 > top3 or top2 < bottom3:
-                                    y_overlap = False
-                                elif bottom2 > top5 or top2 < bottom5: #How come the parallel 
-                                # if statements for the fourth hitbox seem fine here?
-                                # Disabling these if statements biases the collisions for 1's 
-                                    y_overlap = False
+                                # if bottom2 > top5 or top2 < bottom5: #How come the parallel 
+                                # # if statements for the fourth hitbox seem fine here?
+                                # # Disabling these if statements biases the collisions for 1's 
+                                #     y_overlap = False
                                 else:
                                     y_overlap = True
                                 
@@ -99,11 +99,11 @@ class CollisionManager:
                                     # x's
                                     # print("no overlap x")
                                     x_overlap2 = False
-                                elif left1 > right3 or right1 < left3:
+                                if left1 > right3 or right1 < left3:
                                     x_overlap2 = False
-                                elif left1 > right5 or right1 < left5: #seems like this if statement is fine.
-                                    x_overlap2 = False
-                                    # Disabling the fourth hitbox statements here mens a lot more printed 2's than 1's.
+                                # if left1 > right5 or right1 < left5: #seems like this if statement is fine.
+                                #     x_overlap2 = False
+                                #     # Disabling the fourth hitbox statements here mens a lot more printed 2's than 1's.
                                 else:
                                     x_overlap2 = True
                                 
@@ -112,11 +112,11 @@ class CollisionManager:
                                     # y's
                                     # print("no overlap y")
                                     y_overlap2 = False
-                                elif bottom1 > top3 or top1 < bottom3:
+                                if bottom1 > top3 or top1 < bottom3:
                                     y_overlap2 = False
-                                elif bottom1 > top5 or top1 < bottom5: 
-                                    # Why would this interfere with the bottom two hitboxes? 
-                                    y_overlap2 = False
+                                # if bottom1 > top5 or top1 < bottom5: 
+                                #     # Why would this interfere with the bottom two hitboxes? 
+                                #     y_overlap2 = False
                                 else:
                                     y_overlap2 = True
                                 
